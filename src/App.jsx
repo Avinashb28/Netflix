@@ -1,16 +1,16 @@
  
  
 import './App.css'
-
-function App() {
-  
-
+ import Authentication from './components/Authentication'
+import AuthHelp from './components/AuthHelp'
+import SignUp from "./components/SignUp";
+function App() { 
   return (
     <>
-    
-         < p className='bg-blue-400 '>hiii</p>
-       
-      
+   
+     <Authentication/>  
+     {/* <AuthHelp/>   */}
+      {/* <SignUp/> */}
     </>
   )
 }
