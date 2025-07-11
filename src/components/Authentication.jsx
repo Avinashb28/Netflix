@@ -1,11 +1,15 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+
 const Authentication = () => {
   const [userSignWith, SetUserSignWith] = useState(true);
 
   const handelSignWith = (e) => {
     e.preventDefault();
-
-    SetUserSignWith((userSignWith) => !userSignWith);
+ SetUserSignWith((userSignWith) => !userSignWith);
+  };
+  const handelSubmit = (e) => {
+    e.preventDefault();
   };
   return (
     <div className="h-screen w-screen relative flex items-center justify-center">
@@ -22,7 +26,7 @@ const Authentication = () => {
       />
 
       {/* form handling /validation */}
-      <div className="relative  bg-black opacity-85  p-5 rounded w-1/3 h-full text-white ">
+      <form  onSubmit={handelSubmit} className="relative  bg-black opacity-85  p-5 rounded w-1/3 h-full text-white ">
         <h1 className=" p-3  ">Sign In</h1>
         {userSignWith ? (
           <input
@@ -54,20 +58,31 @@ const Authentication = () => {
           </button>
         )}
         <p className="flex justify-center p-2">or</p>
-        <button
+       {userSignWith ?(<button
           onClick={handelSignWith}
           type='button'
           className="cursor-pointer  bg-gray-500  flex justify-center w-full p-2 mb-4"
         >
-          Use a Sign-in-code{' '}
-        </button>
-        <button className="cursor-pointer p-2 flex justify-center w-full cursor-pointer">
+          Use a Sign-in-code 
+        </button>):<button
+          onClick={handelSignWith}
+          type='button'
+          className="cursor-pointer  bg-gray-500  flex justify-center w-full p-2 mb-4"
+        >
+       Sign-in with password
+        </button>} 
+        < Link to='/AuthHelp' className="cursor-pointer p-2 flex justify-center w-full cursor-pointer">
           Forgot Password?
-        </button>
+        </Link >
         <input className="m-2" type="checkbox" />
         <label>Remember me </label>
-        <button className="p-2 cursor-pointer">New to Netflix?Sign up now.</button>
-      </div>
+
+        <div>
+        <Link to='/' className="p-2 cursor-pointer">New to Netflix?
+        Sign up now.</Link>
+        </div>
+       
+      </form>
     </div>
   );
 };          
