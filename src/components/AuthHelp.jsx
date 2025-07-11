@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const AuthHelp = () => {
   const [radiobtnHandel, SetRadiobtnHandel] = useState('email');
@@ -11,7 +12,7 @@ const AuthHelp = () => {
       <nav className='bg-gray-800 absolute z-30 top-0 w-full flex justify-between items-center px-3'>
         <img className="w-50" src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-01/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" />
         
-         <button className='cursor-pointer bg-red-700   rounded-md    text-white w-15 h-7'>Sign In</button>
+         <Link to='/Authentication'  className='cursor-pointer bg-red-700   rounded-md    text-white w-15 h-7'>Sign In</Link >
       </nav>
       <img className='absolute ' src="https://dnm.nflximg.net/api/v6/aHn-vO8ub4KPvcVsSA3di9cME-o/AAAAAScyGMgUWk6v1RyiD6aiF3q8jELFh0hzbzYEyo0f-s-_TVtoEZRM1L-qGnR_3Oen.jpg" alt="bg img on help page" />
      
